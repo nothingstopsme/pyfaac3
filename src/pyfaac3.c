@@ -619,7 +619,7 @@ pyfaac3_Encoder___exit__(PyObject *self_as_object, PyObject *args, PyObject *kwa
 static PyModuleDef pyfaac3Module = {
 	PyModuleDef_HEAD_INIT,
 	"pyfaac3",
-	"An extention module wrapping libfaac to expose its aac encoding functionality for the python3 environment.",
+	"An extention module providing access to libfaac in a python3 environment.",
 	-1,
 	NULL, NULL, NULL, NULL, NULL
 };
