@@ -39,7 +39,7 @@ static struct PyMemberDef pyfaac3_EncoderConfigMembers[] = {
 	{"quantqual", T_ULONG, CONFIG_OFFSETOF(quantqual), 0,
 		"Quantizer quality"},
 	{"output_format", T_UINT, CONFIG_OFFSETOF(outputFormat), 0,
-		"Bitstream output format (Raw/ADTS)"},
+		"Bitstream output format (RAW/ADTS)"},
 	{"input_format", T_UINT, CONFIG_OFFSETOF(inputFormat), 0,
 		"PCM Format of input data (FAAC_INPUT_16BIT/FAAC_INPUT_32BIT/FAAC_INPUT_FLOAT)"},
 	{"shortctl", T_INT, CONFIG_OFFSETOF(shortctl), 0,
@@ -77,7 +77,7 @@ static PyTypeObject pyfaac3_EncoderConfigType = {
 	0,                         /* tp_setattro */
 	0,                         /* tp_as_buffer */
 	Py_TPFLAGS_DEFAULT,        /* tp_flags */
-	"Configuration of AAC encoder",           /* tp_doc */
+	"The configuration of pyfaac3.Encoder",           /* tp_doc */
 	0,                         /* tp_traverse */
 	0,                         /* tp_clear */
 	0,                         /* tp_richcompare */
@@ -211,7 +211,7 @@ static PyTypeObject pyfaac3_EncoderType = {
 	0,                         /* tp_setattro */
 	0,                         /* tp_as_buffer */
 	Py_TPFLAGS_DEFAULT,        /* tp_flags */
-	"AAC encoder powered by libfaac",           /* tp_doc */
+	"An AAC encoder powered by faac",           /* tp_doc */
 	0,                         /* tp_traverse */
 	0,                         /* tp_clear */
 	0,                         /* tp_richcompare */
@@ -619,7 +619,7 @@ pyfaac3_Encoder___exit__(PyObject *self_as_object, PyObject *args, PyObject *kwa
 static PyModuleDef pyfaac3Module = {
 	PyModuleDef_HEAD_INIT,
 	"pyfaac3",
-	"An extention module providing access to libfaac in a python3 environment.",
+	"An extention module providing access to the native library \"faac\" from a python3 environment.",
 	-1,
 	NULL, NULL, NULL, NULL, NULL
 };
@@ -647,13 +647,13 @@ PyInit_pyfaac3(void)
 			|| PyModule_AddIntMacro(m, MPEG4) < 0
 			|| PyModule_AddIntMacro(m, MAIN) < 0
 			|| PyModule_AddIntMacro(m, LOW) < 0
-			//Note: SSR seems to be not supported by libfaac 
+			//Note: SSR seems to be not supported by faac 
 			|| PyModule_AddIntMacro(m, SSR) < 0
 			|| PyModule_AddIntMacro(m, LTP) < 0
 			|| PyModule_AddIntMacro(m, RAW) < 0
 			|| PyModule_AddIntMacro(m, ADTS) < 0
 			|| PyModule_AddIntMacro(m, FAAC_INPUT_16BIT) < 0
-			//Note: FAAC_INPUT_24BIT seems to be not supported by libfaac 
+			//Note: FAAC_INPUT_24BIT seems to be not supported by faac 
 			|| PyModule_AddIntMacro(m, FAAC_INPUT_24BIT) < 0
 			|| PyModule_AddIntMacro(m, FAAC_INPUT_32BIT) < 0
 			|| PyModule_AddIntMacro(m, FAAC_INPUT_FLOAT) < 0
