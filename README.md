@@ -54,7 +54,7 @@ You can also find a full list of classes/functions/attributes/constants availabl
 It is worth mentioning that faac maintains an internal buffer for encoding, and faacEncEncode() will not return any result (returning 0 bytes in fact) until that buffer is filled up.
 Due to that behaviour, there is actually a delay in producing encoded data, and this is also why flushing operations are needed after all audio samples have been submitted through faacEncEncode(), in order to make up the delay. 
 
-The presence of delay might not matter for pure pcm-to-aac conversion, but it becomes an issue when each generated aac frame is directly involved in a synchronisation process with other media; in that case, special care should be taken to correct the time discrepancy caused by the delay.
+The presence of delay might not matter for pure PCM-to-AAC conversion, but it becomes an issue when each generated AAC frame is directly involved in a synchronisation process with other media; in that case, special care should be taken to correct the time discrepancy caused by the delay.
 
 
 
