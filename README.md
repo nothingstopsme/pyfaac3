@@ -10,7 +10,7 @@ This project is inspired by [pyfaac](https://github.com/gleero/pyfaac), which of
 3. All settings (except for those related to psychoacoustic modelling) are configurable.
 4. All setting values natively defined as C macro are exposed to python as module constants.
 5. The final flushing operations (which notifies a native encoder that there is no further input, so that it starts to flush/return the audio frames cached internally) are explicitly defined as calls to flush(), rather than to encode() with an empty buffer (An design choice borrowed from [pyfaac](https://github.com/gleero/pyfaac)).
-6. Following feature 5, calling encode() with an empty buffer is repurposed as encoding a fully silent frame (a audio frame in which the value of all samples is 0). This is consistent with the behaviour of faac when encoding an incomplete frame in which the missing samples are treated as of 0 amplitude.
+6. Following feature 5, calling encode() with an empty buffer is repurposed as encoding a fully silent frame (an audio frame in which the value of all samples is 0). This is consistent with the behaviour of faac when encoding an incomplete frame where the missing samples are treated as of 0 amplitude.
 
 
 ## Prerequisites
