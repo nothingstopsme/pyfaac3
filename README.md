@@ -33,7 +33,7 @@ python3 setup.py build_ext
 ```
 The command above generats the binary file of this module inside the folder "build/lib.*SOME_SYSTEM_PLATFORM_VERSION_SUFFIX*/". That binary can be imported and used as a local module in your python project.
 
-Once you are certain about putting it into your system package reservoir,
+Once you are certain about putting it into your site package reservoir,
 ```Bash
 python3 setup.py install
 ```
