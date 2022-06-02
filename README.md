@@ -37,7 +37,12 @@ Once you are certain about putting it into your site package reservoir,
 ```Bash
 python3 setup.py install
 ```
-to install this module. Note that using pip to manage such a third-party package might be a better choice, since if you change your mind later, it is much easier to perform uninstallation. Please refer to [this document](https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#wheels) for more information about how you can achieve that.
+to install this module. Note that using pip3 to manage such a third-party package might be a better choice, since if you change your mind later, it is much easier to perform uninstallation. If pip3 is available in your environment, this can be done by first running:
+```Bash
+python3 setup.py bdist_wheel
+```
+which produces the corresponding wheel file in the "dist" folder, and installing that wheel using pip3.
+
 
 
 ## Usage
